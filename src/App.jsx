@@ -263,9 +263,13 @@ function App() {
             exceptional user experiences.
           </p>
           <div className="w-full mt-4 flex justify-center  md:justify-end">
-            <button className="bg-green-500 hover:bg-green-600 px-4 py-2 rounded-lg text-white font-semibold transition-colors">
+            <a
+              href="/resume/AkashGargResume.pdf"
+              download={true}
+              className="bg-green-500 hover:bg-green-600 px-4 py-2 rounded-lg text-white font-semibold transition-colors"
+            >
               View Resume
-            </button>
+            </a>
           </div>
         </div>
       </motion.div>
