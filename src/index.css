@@ -1,0 +1,129 @@
+@import "tailwindcss";
+
+.night {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.star {
+  position: absolute;
+  height: 2px;
+  background: linear-gradient(-90deg, #fff, rgba(0, 0, 255, 0));
+  border-radius: 999px;
+  filter: drop-shadow(0 0 6px #fff);
+  transform: rotate(135deg);
+  animation: tail 8s ease-in-out infinite, falling 8s ease-in-out infinite;
+}
+
+@keyframes tail {
+  0% { width: 0; }
+  30% { width: 100px; }
+  100% { width: 0; }
+}
+
+@keyframes falling {
+  0% {
+    transform: translateY(-20px) translateX(0) rotate(135deg);
+    opacity: 0.7;
+  }
+  100% {
+    transform: translateY(100vh) translateX(-200px) rotate(135deg);
+    opacity: 0;
+  }
+}
+
+.star::before,
+.star::after {
+  content: "";
+  position: absolute;
+  top: calc(50% - 1px);
+  right: 0;
+  height: 2px;
+  background: linear-gradient(-90deg, rgba(0, 0, 255, 0), #fff, rgba(0, 0, 255, 0));
+  border-radius: 100%;
+  animation: shining 8s ease-in-out infinite;
+}
+
+.star::before {
+  transform: translateX(50%) rotate(45deg);
+}
+
+.star::after {
+  transform: translateX(50%) rotate(-45deg);
+}
+
+@keyframes shining {
+  0% { width: 0; }
+  50% { width: 24px; }
+  100% { width: 0; }
+}
+
+.sharp-border {
+  position: absolute;
+  inset: 0;
+  border: 2px solid transparent;
+  border-image: linear-gradient(45deg, #191b21, #0f1720, transparent) 1;
+  animation: borderShimmer 3s linear infinite;
+  z-index: 10;
+}
+
+@keyframes borderShimmer {
+  0% { border-image-source: linear-gradient(45deg, #171d25, #121621, transparent); }
+  50% { border-image-source: linear-gradient(45deg, #171d29, #101224, transparent); }
+  100% { border-image-source: linear-gradient(45deg, #171a29, #0d182c, transparent); }
+}
+
+.blob {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  overflow: hidden;
+  border-radius: 42% 56% 72% 28% / 42% 42% 56% 48%;
+  background: url('/assets/akash.jpg');
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  animation: blob 3.7s linear infinite;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+}
+
+@keyframes blob {
+  0%, 100% {
+    border-radius: 42% 56% 72% 28% / 42% 42% 56% 48%;
+  }
+  33% {
+    border-radius: 42% 28% 48% 48% / 28% 28% 72% 72%;
+  }
+  66% {
+    border-radius: 100% 56% 56% 100% / 100% 100% 56% 56%;
+  }
+}
+
+/* Mobile-specific adjustments */
+@media (max-width: 640px) {
+  .blob {
+    width: 200px;
+    height: 200px;
+  }
+  .grid-cols-1 {
+    grid-template-columns: 1fr;
+  }
+  .md\:grid-cols-5 {
+    grid-template-columns: 1fr;
+  }
+  .md\:col-span-2,
+  .md\:col-span-3 {
+    grid-column: auto;
+  }
+  .sm\:grid-cols-2 {
+    grid-template-columns: 1fr;
+  }
+}
