@@ -21,9 +21,15 @@
 }
 
 @keyframes tail {
-  0% { width: 0; }
-  30% { width: 100px; }
-  100% { width: 0; }
+  0% {
+    width: 0;
+  }
+  30% {
+    width: 100px;
+  }
+  100% {
+    width: 0;
+  }
 }
 
 @keyframes falling {
@@ -44,7 +50,12 @@
   top: calc(50% - 1px);
   right: 0;
   height: 2px;
-  background: linear-gradient(-90deg, rgba(0, 0, 255, 0), #fff, rgba(0, 0, 255, 0));
+  background: linear-gradient(
+    -90deg,
+    rgba(0, 0, 255, 0),
+    #fff,
+    rgba(0, 0, 255, 0)
+  );
   border-radius: 100%;
   animation: shining 8s ease-in-out infinite;
 }
@@ -58,9 +69,15 @@
 }
 
 @keyframes shining {
-  0% { width: 0; }
-  50% { width: 24px; }
-  100% { width: 0; }
+  0% {
+    width: 0;
+  }
+  50% {
+    width: 24px;
+  }
+  100% {
+    width: 0;
+  }
 }
 
 .sharp-border {
@@ -73,9 +90,15 @@
 }
 
 @keyframes borderShimmer {
-  0% { border-image-source: linear-gradient(45deg, #171d25, #121621, transparent); }
-  50% { border-image-source: linear-gradient(45deg, #171d29, #101224, transparent); }
-  100% { border-image-source: linear-gradient(45deg, #171a29, #0d182c, transparent); }
+  0% {
+    border-image-source: linear-gradient(45deg, #171d25, #121621, transparent);
+  }
+  50% {
+    border-image-source: linear-gradient(45deg, #171d29, #101224, transparent);
+  }
+  100% {
+    border-image-source: linear-gradient(45deg, #171a29, #0d182c, transparent);
+  }
 }
 
 .blob {
@@ -84,7 +107,7 @@
   height: 400px;
   overflow: hidden;
   border-radius: 42% 56% 72% 28% / 42% 42% 56% 48%;
-  background: url('/assets/akash.jpg');
+  background: url("/assets/akash.jpg");
   background-size: cover;
   background-position: center;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
@@ -96,7 +119,8 @@
 }
 
 @keyframes blob {
-  0%, 100% {
+  0%,
+  100% {
     border-radius: 42% 56% 72% 28% / 42% 42% 56% 48%;
   }
   33% {
@@ -126,4 +150,175 @@
   .sm\:grid-cols-2 {
     grid-template-columns: 1fr;
   }
+}
+
+:root {
+  --cert-w: 360px; /* Increased width */
+  --cert-h: 240px; /* Increased height */
+  --gap: calc(var(--cert-w) / 300);
+  --slide-w: calc(4 * var(--cert-w) + 3 * var(--gap));
+  --anim-dur: 20s;
+}
+
+@keyframes scroll-right {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-1 * var(--slide-w)));
+  }
+}
+
+.slider {
+  animation: scroll-right var(--anim-dur) linear infinite;
+}
+
+.slide {
+  width: var(--slide-w);
+  display: grid;
+  grid-template-columns: repeat(4, var(--cert-w));
+  grid-template-rows: repeat(2, var(--cert-h));
+  /* column-gap: var(--gap); */
+  /* row-gap: var(--gap); */
+  align-items: center;
+  justify-content: center;
+}
+
+.slide .certificate:nth-child(1) {
+  grid-column: 1;
+  grid-row: 1;
+}
+.slide .certificate:nth-child(2) {
+  grid-column: 2;
+  grid-row: 2;
+}
+.slide .certificate:nth-child(3) {
+  grid-column: 3;
+  grid-row: 1;
+}
+.slide .certificate:nth-child(4) {
+  grid-column: 4;
+  grid-row: 2;
+}
+
+/* Add cropping to top & bottom of certificates */
+.certificate {
+  position: relative;
+  height: var(--cert-h);
+  width: var(--cert-w);
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  :root {
+    --cert-w: 240px;
+    --cert-h: 160px;
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --cert-w: 180px;
+    --cert-h: 120px;
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --cert-w: 140px;
+    --cert-h: 90px;
+  }
+}
+.clip-zigzag {
+  clip-path: polygon(
+    0% 0%,
+    50% 5%,
+    0% 10%,
+    50% 15%,
+    0% 20%,
+    50% 25%,
+    0% 30%,
+    50% 35%,
+    0% 40%,
+    50% 45%,
+    0% 50%,
+    50% 55%,
+    0% 60%,
+    50% 65%,
+    0% 70%,
+    50% 75%,
+    0% 80%,
+    50% 85%,
+    0% 90%,
+    50% 95%,
+    0% 100%
+  );
+}
+
+.clip-wave-right {
+  -webkit-clip-path: polygon(
+    0 0,
+    94% 0,
+    96% 10%,
+    94% 20%,
+    96% 30%,
+    94% 40%,
+    96% 50%,
+    94% 60%,
+    96% 70%,
+    94% 80%,
+    96% 90%,
+    94% 100%,
+    0 100%
+  );
+  clip-path: polygon(
+    0 0,
+    94% 0,
+    96% 10%,
+    94% 20%,
+    96% 30%,
+    94% 40%,
+    96% 50%,
+    94% 60%,
+    96% 70%,
+    94% 80%,
+    96% 90%,
+    94% 100%,
+    0 100%
+  );
+}
+
+.clip-wave-left {
+  -webkit-clip-path: polygon(
+    100% 0,
+    6% 0,
+    4% 10%,
+    6% 20%,
+    4% 30%,
+    6% 40%,
+    4% 50%,
+    6% 60%,
+    4% 70%,
+    6% 80%,
+    4% 90%,
+    6% 100%,
+    100% 100%
+  );
+  clip-path: polygon(
+    100% 0,
+    6% 0,
+    4% 10%,
+    6% 20%,
+    4% 30%,
+    6% 40%,
+    4% 50%,
+    6% 60%,
+    4% 70%,
+    6% 80%,
+    4% 90%,
+    6% 100%,
+    100% 100%
+  );
 }

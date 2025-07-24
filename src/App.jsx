@@ -3,7 +3,6 @@ import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Sphere, MeshDistortMaterial } from "@react-three/drei";
 import { motion } from "framer-motion";
 import Akash from "./assets/akash.jpg";
-import First from "./assets/1st.png";
 import Second from "./assets/2nd.jpg";
 import Third from "./assets/3rd.jpg";
 import Fourth from "./assets/4th.jpg";
@@ -11,12 +10,9 @@ import Fifth from "./assets/5th.jpg";
 import Sixth from "./assets/6th.jpg";
 import Seventh from "./assets/7th.jpg";
 
+import Slider from "./component/Slider";
+
 const projects = [
-  {
-    name: "AI Prompt Generator",
-    url: "https://tetpromptgeneratorapp-56789656081.asia-southeast1.run.app/",
-    img: First,
-  },
   {
     name: "Tiffin Service",
     url: "https://v0-tiffin-service-website.vercel.app/",
@@ -47,45 +43,6 @@ const projects = [
     url: "https://comforting-paprenjak-aee9a2.netlify.app/",
     img: Seventh,
   },
-  // {
-  //   name: "Portfolio V2",
-  //   url: "#",
-  //   img: Eighth, // Replace with actual image
-  // },
-  // {
-  //   name: "E-Learning Platform",
-  //   url: "#",
-  //   img: Ninth, // Replace with actual image
-  // },
-  // {
-  //   name: "Task Manager",
-  //   url: "#",
-  //   img: Tenth, // Replace with actual image
-  // },
-];
-
-const skills = [
-  "React.js",
-  "Next.js",
-  "Power BI",
-  "Elasticsearch",
-  "JavaScript",
-  "HTML",
-  "CSS",
-  "Prsima",
-  "React Native",
-  "Bootsrap",
-  "SQL",
-  "MongoDB",
-  "SQLite",
-  "Tailwind CSS",
-  "Redux",
-  "Node.js",
-  "NestJS",
-  "Firebase",
-  "Python",
-  "TypeScript",
-  "GraphQL",
 ];
 
 const education = [
@@ -187,7 +144,7 @@ function App() {
         transition={{ duration: 0.8 }}
         className="relative z-10 grid grid-cols-1 gap-y-8 md:gap-4 md:grid-cols-2 gap-4 items-center justify-center max-w-6xl mx-auto px-4 md:px-8"
       >
-        <div className="flex flex-col items-center md:items-start gap-4 text-center md:text-left max-w-md mx-auto">
+        <div className="flex flex-col mb-8 lg:mb-0 items-center md:items-start gap-4 text-center md:text-left max-w-md mx-auto">
           <div className="relative w-20 h-20 sm:w-24 sm:h-24 md:w-32 md:h-32">
             <Canvas
               camera={{ position: [0, 0, 5] }}
@@ -263,33 +220,17 @@ function App() {
             exceptional user experiences.
           </p>
           <div className="w-full mt-4 flex justify-center  md:justify-end">
-            <a
-              href="/resume/AkashGargResume.pdf"
-              download={true}
-              className="bg-green-500 hover:bg-green-600 px-4 py-2 rounded-lg text-white font-semibold transition-colors"
-            >
+            <button className="bg-green-500 hover:bg-green-600 px-4 py-2 rounded-lg text-white font-semibold transition-colors">
               View Resume
-            </a>
+            </button>
           </div>
         </div>
       </motion.div>
 
-      {/* Skills Section */}
-      <section className="relative z-10 my-8 px-4 max-w-3xl mx-auto">
-        <h2 className="text-2xl md:text-3xl font-bold mb-4 text-center">
-          Skills
-        </h2>
-        <div className="flex flex-wrap justify-center gap-2">
-          {skills.map((skill, index) => (
-            <span
-              key={index}
-              className="border border-green-400 rounded-full px-3 py-1 text-xs bg-gray-800/50 hover:bg-green-500/20 transition-colors"
-            >
-              {skill}
-            </span>
-          ))}
-        </div>
-      </section>
+<div className="py-4 my-4">
+
+      <Slider />
+</div>
 
       {/* Work Experience and Internships Section */}
       <section className="relative z-10 my-8 px-4 max-w-5xl mx-auto">
