@@ -3,31 +3,36 @@ import Frontend from "../assets/frontendLib.png";
 import JS from "../assets/js.png";
 import RWD from "../assets/rwd.png";
 import D3 from "../assets/d3.png";
+import LORG from "../assets/lfo.png";
 
 const Slider = () => {
-  const certificates = [Frontend, JS, RWD, D3];
+  const certificates = [
+    { src: Frontend, contain: false },
+    { src: JS, contain: false },
+    { src: RWD, contain: false },
+    { src: D3, contain: false },
+    { src: LORG, contain: true },
+  ];
+
   const skills = [
     "React.js",
     "Next.js",
     "Power BI",
-    "Elasticsearch",
     "JavaScript",
     "HTML",
     "CSS",
-    "Prsima",
     "React Native",
     "Bootsrap",
-    "SQL",
+    "MySQL",
     "MongoDB",
     "SQLite",
     "Tailwind CSS",
     "Redux",
     "Node.js",
-    "NestJS",
-    "Firebase",
     "Python",
     "TypeScript",
-    "GraphQL",
+    "Linux",
+    "Shell Scripting",
   ];
 
   return (
@@ -44,9 +49,11 @@ const Slider = () => {
                   className="certificate min-w-[150px] sm:min-w-[200px] md:min-w-[250px] h-[120px] sm:h-[150px] md:h-[180px] m-2 flex items-center justify-center bg-white border border-gray-700 shadow-md overflow-hidden rounded-lg"
                 >
                   <img
-                    src={cert}
+                    src={cert.src}
                     alt={`Certificate ${idx + 1}`}
-                    className="w-full h-full object-cover"
+                    className={`w-full h-full ${
+                      cert.contain ? "object-contain" : "object-cover"
+                    }`}
                   />
                 </div>
               ))}
@@ -59,9 +66,11 @@ const Slider = () => {
                   className="certificate min-w-[150px] sm:min-w-[200px] md:min-w-[250px] h-[120px] sm:h-[150px] md:h-[180px] m-2 flex items-center justify-center bg-white border border-gray-700 shadow-md overflow-hidden rounded-lg"
                 >
                   <img
-                    src={cert}
+                    src={cert.src}
                     alt={`Certificate ${idx + 1}`}
-                    className="w-full h-full object-cover"
+                    className={`w-full h-full ${
+                      cert.contain ? "object-contain" : "object-cover"
+                    }`}
                   />
                 </div>
               ))}
@@ -71,7 +80,7 @@ const Slider = () => {
       </div>
 
       {/* Left Side - Skills */}
-      <div className="w-full lg:w-1/4 relative z-10 pl-3 py-8 max-w-3xl mx-auto clip-wave-left overflow-hidden flex flex-col items-center justify-center">
+      <div className="w-full lg:w-1/4 relative z-10 pl-6 py-8 max-w-3xl mx-auto clip-wave-left overflow-hidden flex flex-col items-center justify-center">
         <h2 className="text-xl sm:text-2xl md:text-3xl font-bold mb-6 text-center">
           Skills and Certifications
         </h2>
