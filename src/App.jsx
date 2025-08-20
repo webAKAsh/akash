@@ -177,33 +177,47 @@ function App() {
               Frontend-Focused Full Stack Developer
             </p>
             <p className="text-xs sm:text-sm md:text-base mb-1">
-              📍 Delhi | 📧 engage.akash@gmail.com
+              📍 India | 📧 engage.akash@gmail.com
             </p>
             <p className="text-xs sm:text-sm md:text-base mb-1">
               📱 +91 8178898309, +91 8505893525
             </p>
-            <p className="text-xs sm:text-sm md:text-base mb-1">
-              🌐{" "}
-              <a
-                href="https://github.com/webAKAsh"
-                target="_blank"
-                rel="noreferrer"
-                className="underline hover:text-green-400"
-              >
-                github.com/webAKAsh
-              </a>
-            </p>
-            <p className="text-xs sm:text-sm md:text-base mb-4">
-              🔗{" "}
-              <a
-                href="https://linkedin.com/in/akash-garg-ab278b212"
-                target="_blank"
-                rel="noreferrer"
-                className="underline hover:text-green-400"
-              >
-                linkedin.com/in/akash-garg-ab278b212
-              </a>
-            </p>
+
+            <div className="flex justify-between items-center">
+              <p className="text-xs sm:text-sm md:text-base mb-4">
+                🌐{" "}
+                <a
+                  href="https://github.com/webAKAsh"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="underline hover:text-green-400"
+                >
+                  Github
+                </a>
+              </p>
+              <p className="text-xs sm:text-sm md:text-base mb-4">
+                🔗{" "}
+                <a
+                  href="https://linkedin.com/in/akash-garg-ab278b212"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="underline hover:text-green-400"
+                >
+                  Linkedin
+                </a>
+              </p>
+              <p className="text-xs sm:text-sm md:text-base mb-4">
+                🏷️{" "}
+                <a
+                  href="https://www.credly.com/users/akash_garg"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="underline hover:text-green-400"
+                >
+                  Credly
+                </a>
+              </p>
+            </div>
           </div>
         </div>
 
@@ -227,10 +241,9 @@ function App() {
         </div>
       </motion.div>
 
-<div className="py-4 my-4">
-
-      <Slider />
-</div>
+      <div className="py-4 my-4">
+        <Slider />
+      </div>
 
       {/* Work Experience and Internships Section */}
       <section className="relative z-10 my-8 px-4 max-w-5xl mx-auto">

@@ -4,6 +4,8 @@ import JS from "../assets/js.png";
 import RWD from "../assets/rwd.png";
 import D3 from "../assets/d3.png";
 import LORG from "../assets/lfo.png";
+import FDC3 from "../assets/fdc3.png";
+import Oapi from "../assets/oapi.png";
 
 const Slider = () => {
   const certificates = [
@@ -12,6 +14,8 @@ const Slider = () => {
     { src: RWD, contain: false },
     { src: D3, contain: false },
     { src: LORG, contain: true },
+    { src: FDC3, contain: true },
+    { src: Oapi, contain: true },
   ];
 
   const skills = [
@@ -46,13 +50,13 @@ const Slider = () => {
               {certificates.map((cert, idx) => (
                 <div
                   key={`cert1-${idx}`}
-                  className="certificate min-w-[150px] sm:min-w-[200px] md:min-w-[250px] h-[120px] sm:h-[150px] md:h-[180px] m-2 flex items-center justify-center bg-white border border-gray-700 shadow-md overflow-hidden rounded-lg"
+                  className="certificate min-w-[150px] sm:min-w-[200px] md:min-w-[250px] h-[120px] sm:h-[150px] md:h-[180px] m-2 flex items-center justify-center bg-transparent shadow-md overflow-hidden rounded-lg"
                 >
                   <img
                     src={cert.src}
                     alt={`Certificate ${idx + 1}`}
                     className={`w-full h-full ${
-                      cert.contain ? "object-contain" : "object-cover"
+                      cert.contain ? "object-contain py-2" : "object-cover"
                     }`}
                   />
                 </div>
@@ -63,13 +67,13 @@ const Slider = () => {
               {certificates.map((cert, idx) => (
                 <div
                   key={`cert2-${idx}`}
-                  className="certificate min-w-[150px] sm:min-w-[200px] md:min-w-[250px] h-[120px] sm:h-[150px] md:h-[180px] m-2 flex items-center justify-center bg-white border border-gray-700 shadow-md overflow-hidden rounded-lg"
+                  className="certificate min-w-[150px] sm:min-w-[200px] md:min-w-[250px] h-[120px] sm:h-[150px] md:h-[180px] m-2 flex items-center justify-center bg-transparent shadow-md overflow-hidden rounded-lg"
                 >
                   <img
                     src={cert.src}
                     alt={`Certificate ${idx + 1}`}
                     className={`w-full h-full ${
-                      cert.contain ? "object-contain" : "object-cover"
+                      cert.contain ? "object-contain py-2" : "object-cover"
                     }`}
                   />
                 </div>
