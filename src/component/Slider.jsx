@@ -6,6 +6,7 @@ import D3 from "../assets/d3.png";
 import LORG from "../assets/lfo.png";
 import FDC3 from "../assets/fdc3.png";
 import Oapi from "../assets/oapi.png";
+import JSSecurity from "../assets/js-security.png";
 
 const Slider = () => {
   const certificates = [
@@ -16,27 +17,29 @@ const Slider = () => {
     { src: LORG, contain: true },
     { src: FDC3, contain: true },
     { src: Oapi, contain: true },
+    { src: JSSecurity, contain: true },
   ];
 
   const skills = [
-    "React.js",
-    "Next.js",
-    "Power BI",
-    "JavaScript",
     "HTML",
     "CSS",
-    "React Native",
-    "Bootsrap",
-    "MySQL",
-    "MongoDB",
-    "SQLite",
     "Tailwind CSS",
+    "JavaScript",
+    "Typescript",
+    "MERN Stack",
     "Redux",
-    "Node.js",
+    "Next.js",
+    "Power BI",
+    "Apache Superset",
+    "React Native",
+    "MySQL",
+    "SQLite",
     "Python",
-    "TypeScript",
     "Linux",
     "Shell Scripting",
+    "OpenAPI",
+    "Git",
+    "GitHub",
   ];
 
   return (

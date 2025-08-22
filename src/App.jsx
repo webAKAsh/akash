@@ -182,10 +182,13 @@ function App() {
             <p className="text-xs sm:text-sm md:text-base mb-1">
               📱 +91 8178898309, +91 8505893525
             </p>
+            <p className="text-xs sm:text-sm md:text-base mb-1">
+              🌐 English, Hindi, Japanese
+            </p>
 
             <div className="flex justify-between items-center">
               <p className="text-xs sm:text-sm md:text-base mb-4">
-                🌐{" "}
+                🖧 {" "}
                 <a
                   href="https://github.com/webAKAsh"
                   target="_blank"
