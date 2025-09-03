@@ -174,9 +174,6 @@ function App() {
               📍 India | 📧 engage.akash@gmail.com
             </p>
             <p className="text-xs sm:text-sm md:text-base mb-1">
-              📱 +91 8178898309, +91 8505893525
-            </p>
-            <p className="text-xs sm:text-sm md:text-base mb-1">
               🌐 English, Hindi, Japanese
             </p>
 
