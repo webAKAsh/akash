@@ -84,13 +84,6 @@ const internships = [
 function App() {
   const [stars, setStars] = useState([]);
 
-  const handleDownload = () => {
-    const link = document.createElement("a");
-    link.href = "/resume/AkashGargResume.pdf";
-    link.download = "AkashGargResume.pdf";
-    link.click();
-  };
-
   useEffect(() => {
     const interval = setInterval(() => {
       setStars((prevStars) => {
@@ -238,12 +231,14 @@ function App() {
             exceptional user experiences.
           </p>
           <div className="w-full mt-4 flex justify-center  md:justify-end">
-            <button
-              onClick={handleDownload}
+            <a
+              href="/resume/AkashGargResume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
               className="bg-green-500 hover:bg-green-600 px-4 py-2 cursor-pointer rounded-lg text-white font-semibold transition-colors"
             >
               View Resume
-            </button>
+            </a>
           </div>
         </div>
       </motion.div>
