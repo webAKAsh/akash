@@ -6,7 +6,6 @@ import Akash from "./assets/akash.jpg";
 import Second from "./assets/2nd.jpg";
 import Third from "./assets/3rd.jpg";
 import Fourth from "./assets/4th.jpg";
-import Fifth from "./assets/5th.jpg";
 import Sixth from "./assets/6th.jpg";
 import Seventh from "./assets/7th.jpg";
 
