@@ -29,11 +29,6 @@ const projects = [
     img: Fourth,
   },
   {
-    name: "PVR Styva",
-    url: "https://pvr-styva.vercel.app/",
-    img: Fifth,
-  },
-  {
     name: "Tiles Marketplace",
     url: "https://resonant-gecko-05e06f.netlify.app/",
     img: Sixth,
