@@ -84,6 +84,13 @@ const internships = [
 function App() {
   const [stars, setStars] = useState([]);
 
+  const handleDownload = () => {
+    const link = document.createElement("a");
+    link.href = "/resume/AkashGargResume.pdf";
+    link.download = "AkashGargResume.pdf";
+    link.click();
+  };
+
   useEffect(() => {
     const interval = setInterval(() => {
       setStars((prevStars) => {
@@ -182,7 +189,7 @@ function App() {
 
             <div className="flex justify-between items-center">
               <p className="text-xs sm:text-sm md:text-base mb-4">
-                🖧 {" "}
+                🖧{" "}
                 <a
                   href="https://github.com/webAKAsh"
                   target="_blank"
@@ -231,7 +238,10 @@ function App() {
             exceptional user experiences.
           </p>
           <div className="w-full mt-4 flex justify-center  md:justify-end">
-            <button className="bg-green-500 hover:bg-green-600 px-4 py-2 rounded-lg text-white font-semibold transition-colors">
+            <button
+              onClick={handleDownload}
+              className="bg-green-500 hover:bg-green-600 px-4 py-2 cursor-pointer rounded-lg text-white font-semibold transition-colors"
+            >
               View Resume
             </button>
           </div>
